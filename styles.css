@@ -1,1 +1,312 @@
-e
+/* style.css */
+
+/* ---------- GLOBAL ---------- */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Segoe UI', Roboto, sans-serif;
+}
+
+body {
+  background-color: #121212;
+  color: #e0e0e0;
+  line-height: 1.5;
+}
+
+button {
+  cursor: pointer;
+  border: none;
+  outline: none;
+}
+
+/* ---------- HEADER ---------- */
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  background-color: #1b1b1b;
+  border-bottom: 2px solid #00ff00;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.logo {
+  font-size: 1.8rem;
+  font-weight: bold;
+  color: #00ff00;
+}
+
+.main-nav .nav-btn {
+  background: none;
+  color: #e0e0e0;
+  margin: 0 0.5rem;
+  padding: 0.5rem 1rem;
+  transition: 0.3s;
+}
+
+.main-nav .nav-btn:hover {
+  color: #121212;
+  background-color: #00ff00;
+  border-radius: 5px;
+}
+
+.user-panel {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.user-panel span {
+  font-size: 0.9rem;
+}
+
+.action-btn {
+  padding: 0.5rem 1rem;
+  background-color: #00ff00;
+  color: #121212;
+  border-radius: 5px;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+.action-btn:hover {
+  background-color: #00cc00;
+}
+
+/* ---------- MAIN SECTIONS ---------- */
+main {
+  padding: 2rem;
+}
+
+.section {
+  display: none;
+}
+
+.section.active {
+  display: block;
+}
+
+.video-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 1.5rem;
+  margin-top: 1rem;
+}
+
+.load-more {
+  margin: 2rem auto;
+  display: block;
+  background-color: #00ff00;
+  color: #121212;
+  padding: 0.7rem 1.5rem;
+  border-radius: 5px;
+  transition: 0.3s;
+}
+
+.load-more:hover {
+  background-color: #00cc00;
+}
+
+/* ---------- VIDEO CARD ---------- */
+.video-card {
+  background-color: #1b1b1b;
+  border: 1px solid #00ff00;
+  border-radius: 8px;
+  overflow: hidden;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.video-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 0 10px #00ff00;
+}
+
+.video-player {
+  width: 100%;
+  display: block;
+}
+
+.video-info {
+  padding: 0.5rem 1rem;
+}
+
+.video-title {
+  font-size: 1.1rem;
+  margin-bottom: 0.3rem;
+}
+
+.video-channel {
+  font-size: 0.9rem;
+  color: #a0a0a0;
+  margin-bottom: 0.5rem;
+}
+
+.video-stats {
+  font-size: 0.8rem;
+  color: #a0a0a0;
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 0.5rem;
+}
+
+.video-actions {
+  display: flex;
+  justify-content: space-between;
+  padding: 0.5rem 1rem;
+}
+
+.video-actions button {
+  padding: 0.3rem 0.7rem;
+  border-radius: 5px;
+  font-size: 0.8rem;
+  transition: 0.3s;
+}
+
+.likeBtn {
+  background-color: #00ff00;
+  color: #121212;
+}
+
+.likeBtn:hover {
+  background-color: #00cc00;
+}
+
+.subscribeBtn {
+  background-color: #121212;
+  border: 1px solid #00ff00;
+  color: #00ff00;
+}
+
+.subscribeBtn:hover {
+  background-color: #00ff00;
+  color: #121212;
+}
+
+/* ---------- MODALS ---------- */
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(18, 18, 18, 0.95);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 2000;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s;
+}
+
+.modal.visible {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.modal-content {
+  background-color: #1b1b1b;
+  padding: 2rem;
+  border: 2px solid #00ff00;
+  border-radius: 10px;
+  width: 90%;
+  max-width: 500px;
+  text-align: center;
+}
+
+.modal-content input,
+.modal-content textarea {
+  width: 100%;
+  padding: 0.5rem;
+  margin: 0.5rem 0;
+  background-color: #121212;
+  border: 1px solid #00ff00;
+  color: #e0e0e0;
+  border-radius: 5px;
+}
+
+.modal-actions {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 1rem;
+}
+
+.modal-actions .secondary {
+  background-color: #121212;
+  border: 1px solid #00ff00;
+  color: #00ff00;
+}
+
+.modal-actions .secondary:hover {
+  background-color: #00ff00;
+  color: #121212;
+}
+
+.modal-actions .tertiary {
+  background-color: #444;
+  color: #e0e0e0;
+}
+
+.modal-actions .tertiary:hover {
+  background-color: #00ff00;
+  color: #121212;
+}
+
+/* ---------- LOADING OVERLAY ---------- */
+#loadingOverlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(18, 18, 18, 0.9);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #00ff00;
+  font-size: 1.5rem;
+  z-index: 3000;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s;
+}
+
+#loadingOverlay.visible {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+/* ---------- FOOTER ---------- */
+footer {
+  padding: 1rem 2rem;
+  background-color: #1b1b1b;
+  border-top: 2px solid #00ff00;
+  text-align: center;
+  font-size: 0.9rem;
+  margin-top: 2rem;
+}
+
+/* ---------- RESPONSIVE ---------- */
+@media (max-width: 768px) {
+  .video-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .modal-content {
+    padding: 1.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .video-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .main-nav {
+    flex-wrap: wrap;
+    gap: 0.5rem;
+  }
+}
